@@ -2,6 +2,7 @@ package spreadsheet;
 
 import java.io.IOException;
 import java.util.Scanner;
+
 /**
  * This class represents the controller of an interactive spreadsheet application.
  * This controller offers a simple text interface in which the user can

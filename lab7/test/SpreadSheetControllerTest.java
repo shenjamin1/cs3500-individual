@@ -17,12 +17,15 @@ public class SpreadSheetControllerTest {
   public void testAssignValue() {
     StringBuilder sb = new StringBuilder();
     StringBuilder expected = new StringBuilder();
-    expected.append("Welcome to the spreadsheet program!" + System.lineSeparator() +
-            "Supported user instructions are: " + System.lineSeparator() +
-            "assign-value row-num col-num value (set a cell to a value)" + System.lineSeparator() +
-            "print-value row-num col-num (print the value at a given cell)" + System.lineSeparator() +
-            "menu (Print supported instruction list)" + System.lineSeparator() +
-            "q or quit (quit the program) " + System.lineSeparator());
+    expected.append("Welcome to the spreadsheet program!" + System.lineSeparator()
+            + "Supported user instructions are: " + System.lineSeparator()
+            + "assign-value row-num col-num value (set a cell to a value)"
+            + System.lineSeparator()
+            + "print-value row-num col-num (print the value at a given cell)"
+            + System.lineSeparator()
+            + "menu (Print supported instruction list)"
+            + System.lineSeparator()
+            + "q or quit (quit the program) " + System.lineSeparator());
     for (int i = 1; i <= 3; i += 1) {
       for (int j = 0; j < 2; j += 1) {
         expected.append("Type instruction: ");

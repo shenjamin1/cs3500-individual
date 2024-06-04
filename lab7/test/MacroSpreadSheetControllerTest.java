@@ -14,7 +14,6 @@ import static org.junit.Assert.assertEquals;
  */
 public class MacroSpreadSheetControllerTest {
   private SpreadSheetWithMacroImpl model;
-  private Readable in;
   private Appendable out;
   private MacroSpreadSheetController controller;
 
@@ -34,8 +33,8 @@ public class MacroSpreadSheetControllerTest {
             .append(System.lineSeparator())
             .append("print-value row-num col-num (print the value at a given cell)")
             .append(System.lineSeparator())
-            .append("bulk-assign-value from-row from-col-num to-row to-col-num value" +
-                    "(bulk assign from one cell to another)")
+            .append("bulk-assign-value from-row from-col-num to-row to-col-num value"
+                    + "(bulk assign from one cell to another)")
             .append(System.lineSeparator())
             .append("menu (Print supported instruction list)")
             .append(System.lineSeparator()).append("q or quit (quit the program) ")
@@ -51,7 +50,7 @@ public class MacroSpreadSheetControllerTest {
       }
     }
     expected.append("Thank you for using this program!");
-    in = new StringReader(input.toString());
+    Readable in = new StringReader(input.toString());
     SpreadSheetController controller = new MacroSpreadSheetController(model, in, out);
     controller.control();
     assertEquals(expected.toString(), out.toString());

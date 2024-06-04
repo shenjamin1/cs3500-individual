@@ -4,7 +4,6 @@ import org.junit.Test;
 import spreadsheet.AverageMacro;
 import spreadsheet.BulkAssignMacro;
 import spreadsheet.RangeAssignMacro;
-import spreadsheet.SpreadSheet;
 import spreadsheet.SpreadSheetMacro;
 import spreadsheet.SpreadSheetWithMacro;
 import spreadsheet.SpreadSheetWithMacroImpl;
