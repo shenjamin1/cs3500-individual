@@ -36,6 +36,14 @@ public class MacroSpreadSheetControllerTest {
             .append("bulk-assign-value from-row from-col-num to-row to-col-num value"
                     + "(bulk assign from one cell to another)")
             .append(System.lineSeparator())
+            .append("average from-row-num from-col-num to-row-num to-col-num dest-row-num dest-col-num"
+                    + "(get average of cells in a range)")
+            .append(System.lineSeparator())
+            .append("range-assign from-row-num from-col-num to-row-num "
+                    + "to-col-num start-value increment"
+                    + "(assign a range of values that increment by a given"
+                    + "increment to a range in a row or column of cells)")
+            .append(System.lineSeparator())
             .append("menu (Print supported instruction list)")
             .append(System.lineSeparator()).append("q or quit (quit the program) ")
             .append(System.lineSeparator()).append("Type instruction: ");
