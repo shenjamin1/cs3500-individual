@@ -7,6 +7,7 @@ package spreadsheet;
 public interface SpreadSheetMacro {
   /**
    * Takes in a SpreadSheet object and executes this command on it.
+   *
    * @param spreadsheet SpreadSheet object command is executed on.
    */
   void command(SpreadSheet spreadsheet);

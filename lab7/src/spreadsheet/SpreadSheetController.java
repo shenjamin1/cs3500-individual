@@ -2,7 +2,6 @@ package spreadsheet;
 
 import java.io.IOException;
 import java.util.Scanner;
-
 /**
  * This class represents the controller of an interactive spreadsheet application.
  * This controller offers a simple text interface in which the user can
@@ -30,8 +29,9 @@ public class SpreadSheetController {
   /**
    * Create a controller to work with the specified sheet (model),
    * readable (to take inputs) and appendable (to transmit output).
-   * @param sheet the sheet to work with (the model)
-   * @param readable the Readable object for inputs
+   *
+   * @param sheet      the sheet to work with (the model)
+   * @param readable   the Readable object for inputs
    * @param appendable the Appendable objects to transmit any output
    */
   public SpreadSheetController(SpreadSheet sheet, Readable readable, Appendable appendable) {
@@ -45,6 +45,7 @@ public class SpreadSheetController {
 
   /**
    * The main method that relinquishes control of the application to the controller.
+   *
    * @throws IllegalStateException if the controller is unable to transmit output
    */
   public void control() throws IllegalStateException {
@@ -60,9 +61,8 @@ public class SpreadSheetController {
       String userInstruction = sc.next(); //take an instruction name
       if (userInstruction.equals("quit") || userInstruction.equals("q")) {
         quit = true;
-      }
-      else {
-        processCommand(userInstruction, sc,sheet);
+      } else {
+        processCommand(userInstruction, sc, sheet);
       }
     }
 
@@ -71,7 +71,7 @@ public class SpreadSheetController {
 
   }
 
-  protected void processCommand(String userInstruction, Scanner sc,SpreadSheet sheet) {
+  protected void processCommand(String userInstruction, Scanner sc, SpreadSheet sheet) {
     int row;
     int col;
     double value;

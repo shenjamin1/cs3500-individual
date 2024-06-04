@@ -1,5 +1,9 @@
 package spreadsheet;
 
+/**
+ * A class that represents a macro that bulk assigns a area
+ * from one cell to another.
+ */
 public class BulkAssignMacro implements SpreadSheetMacro {
   private final int row1;
   private final int row2;
@@ -7,6 +11,15 @@ public class BulkAssignMacro implements SpreadSheetMacro {
   private final int col2;
   private final double value;
 
+  /**
+   * Constructor for the BulkAssignMacro.
+   *
+   * @param row1 starting row of the area.
+   * @param col1 starting column of the area.
+   * @param row2 end row of the area.
+   * @param col2 end column of the area.
+   * @param value value to be assigned to each cell in the area.
+   */
   public BulkAssignMacro(int row1, int col1, int row2, int col2, double value) {
     this.row1 = row1;
     this.col1 = col1;

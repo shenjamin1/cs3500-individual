@@ -9,6 +9,9 @@ import spreadsheet.SpreadSheetWithMacroImpl;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
+/**
+ * This class is a tester for various SpreadSheet macros.
+ */
 public class SpreadSheetMacroTest {
   private SpreadSheetWithMacro spreadsheet;
 

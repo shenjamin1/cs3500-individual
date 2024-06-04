@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 public class SpreadSheetProgram {
   /**
    * main method of the program.
+   *
    * @param args any command line arguments
    */
   public static void main(String[] args) {

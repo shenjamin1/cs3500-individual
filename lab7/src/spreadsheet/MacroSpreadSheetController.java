@@ -1,5 +1,7 @@
 package spreadsheet;
 
+import java.util.Scanner;
+
 /**
  * This class represents the controller of an interactive spreadsheet application.
  * This controller offers a simple text interface in which the user can
@@ -30,5 +32,41 @@ public class MacroSpreadSheetController extends SpreadSheetController {
    */
   public MacroSpreadSheetController(SpreadSheet sheet, Readable readable, Appendable appendable) {
     super(sheet, readable, appendable);
+  }
+
+  @Override
+  protected void processCommand(String userInstruction, Scanner sc, SpreadSheet sheet) {
+    switch (userInstruction) {
+      case "bulk-assign-value":
+        try {
+          int row1 = getRowNum(sc.next());
+          int col1 = sc.nextInt();
+          int row2 = getRowNum(sc.next());
+          int col2 = sc.nextInt();
+          double value = sc.nextDouble();
+          System.out.println("Setting cells (" + row1 + "," + (col1 - 1)
+                  + ") to (" + row2 + "," + (col2 - 1) + ")");
+          SpreadSheetMacro bulkAssignMacro = new BulkAssignMacro(
+                  row1, col1 - 1, row2, col2 - 1, value);
+          ((SpreadSheetWithMacroImpl) sheet).execute(bulkAssignMacro);
+        } catch (IllegalArgumentException e) {
+          writeMessage("Error: " + e.getMessage() + System.lineSeparator());
+        }
+        break;
+      default:
+        super.processCommand(userInstruction, sc, sheet);
+    }
+  }
+
+  protected void printMenu() throws IllegalStateException {
+    writeMessage("Supported user instructions are: " + System.lineSeparator());
+    writeMessage("assign-value row-num col-num value (set a cell to a value)"
+            + System.lineSeparator());
+    writeMessage("print-value row-num col-num (print the value at a given cell)"
+            + System.lineSeparator());
+    writeMessage("bulk-assign-value from-row from-col-num to-row to-col-num value" +
+            "(bulk assign from one cell to another)" + System.lineSeparator());
+    writeMessage("menu (Print supported instruction list)" + System.lineSeparator());
+    writeMessage("q or quit (quit the program) " + System.lineSeparator());
   }
 }
