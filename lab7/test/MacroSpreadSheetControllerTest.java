@@ -33,7 +33,7 @@ public class MacroSpreadSheetControllerTest {
             .append(System.lineSeparator())
             .append("print-value row-num col-num (print the value at a given cell)")
             .append(System.lineSeparator())
-            .append("bulk-assign-value from-row from-col-num to-row to-col-num value "
+            .append("bulk-assign-value from-row-num from-col-num to-row to-col-num value "
                     + "(bulk assign from one cell to another)")
             .append(System.lineSeparator())
             .append("average from-row-num from-col-num to-row-num to-col-num "

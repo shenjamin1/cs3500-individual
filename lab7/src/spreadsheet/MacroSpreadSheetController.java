@@ -104,7 +104,7 @@ public class MacroSpreadSheetController extends SpreadSheetController {
             + System.lineSeparator());
     writeMessage("print-value row-num col-num (print the value at a given cell)"
             + System.lineSeparator());
-    writeMessage("bulk-assign-value from-row from-col-num to-row to-col-num value"
+    writeMessage("bulk-assign-value from-row-num from-col-num to-row to-col-num value"
             + " (bulk assign from one cell to another)" + System.lineSeparator());
     writeMessage("average from-row-num from-col-num to-row-num to-col-num dest-row-num dest-col-num"
             + " (get average of cells in a range)" + System.lineSeparator());
