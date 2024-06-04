@@ -69,7 +69,8 @@ public class MacroSpreadSheetController extends SpreadSheetController {
           int destCol = sc.nextInt();
           System.out.println("Getting average of cells (" + row1 + "," + (col1 - 1)
                   + ") to (" + row2 + "," + (col2 - 1) + ")");
-          macro = new AverageMacro(row1, col1, row2, col2, destRow, destCol);
+          macro = new AverageMacro(row1, col1 - 1, row2, col2 - 1,
+                  destRow, destCol - 1);
           ((SpreadSheetWithMacroImpl) sheet).execute(macro);
         } catch (IllegalArgumentException e) {
           writeMessage("Error: " + e.getMessage() + System.lineSeparator());
@@ -79,14 +80,15 @@ public class MacroSpreadSheetController extends SpreadSheetController {
       case "range-assign":
         try {
           row1 = getRowNum(sc.next());
-          col1 = sc.nextInt(0);
+          col1 = sc.nextInt();
           row2 = getRowNum(sc.next());
           col2 = sc.nextInt();
           double startValue = sc.nextDouble();
           double increment = sc.nextDouble();
           System.out.println("Setting incremental range of cells (" + row1 + "," + (col1 - 1)
                   + ") to (" + row2 + "," + (col2 - 1) + ")");
-          macro = new RangeAssignMacro(row1, col1, row2, col2, startValue, increment);
+          macro = new RangeAssignMacro(row1, col1 - 1, row2, col2 - 1,
+                  startValue, increment);
           ((SpreadSheetWithMacroImpl) sheet).execute(macro);
         } catch (IllegalArgumentException e) {
           writeMessage("Error: " + e.getMessage() + System.lineSeparator());
@@ -104,14 +106,14 @@ public class MacroSpreadSheetController extends SpreadSheetController {
             + System.lineSeparator());
     writeMessage("print-value row-num col-num (print the value at a given cell)"
             + System.lineSeparator());
-    writeMessage("bulk-assign-value from-row-num from-col-num to-row to-col-num value"
-            + " (bulk assign from one cell to another)" + System.lineSeparator());
-    writeMessage("average from-row-num from-col-num to-row-num to-col-num dest-row-num dest-col-num"
-            + " (get average of cells in a range)" + System.lineSeparator());
-    writeMessage("range-assign from-row-num from-col-num to-row-num "
-            + "to-col-num start-value increment "
-            + "(assign a range of values that increment by a given "
-            + "increment to a range in a row or column of cells)" + System.lineSeparator());
+    writeMessage("bulk-assign-value from-row-num from-col-num to-row-num to-col-num value"
+            + " (set a range of cells to a value)" + System.lineSeparator());
+    writeMessage("range-assign from-row-num from-col-num to-row-num to-col-num start-value"
+            + " increment (set a row or column of cells to a range of values starting at the"
+            + " given value and advancing by the increment)" + System.lineSeparator());
+    writeMessage("average from-row-num from-col-num to-row-num to-col-num dest-row-num "
+            + "dest-col-num (compute the average of a range of cells and put it at the given"
+            + " location)" + System.lineSeparator());
     writeMessage("menu (Print supported instruction list)" + System.lineSeparator());
     writeMessage("q or quit (quit the program) " + System.lineSeparator());
   }

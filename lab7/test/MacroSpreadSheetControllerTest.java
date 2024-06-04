@@ -27,27 +27,23 @@ public class MacroSpreadSheetControllerTest {
   public void testBulkAssignMacro() {
     StringBuilder input = new StringBuilder();
     StringBuilder expected = new StringBuilder();
-    expected.append("Welcome to the spreadsheet program!").append(System.lineSeparator())
-            .append("Supported user instructions are: ").append(System.lineSeparator())
-            .append("assign-value row-num col-num value (set a cell to a value)")
-            .append(System.lineSeparator())
-            .append("print-value row-num col-num (print the value at a given cell)")
-            .append(System.lineSeparator())
-            .append("bulk-assign-value from-row-num from-col-num to-row to-col-num value "
-                    + "(bulk assign from one cell to another)")
-            .append(System.lineSeparator())
-            .append("average from-row-num from-col-num to-row-num to-col-num "
-                    + "dest-row-num dest-col-num "
-                    + "(get average of cells in a range)")
-            .append(System.lineSeparator())
-            .append("range-assign from-row-num from-col-num to-row-num "
-                    + "to-col-num start-value increment "
-                    + "(assign a range of values that increment by a given "
-                    + "increment to a range in a row or column of cells)")
-            .append(System.lineSeparator())
-            .append("menu (Print supported instruction list)")
-            .append(System.lineSeparator()).append("q or quit (quit the program) ")
-            .append(System.lineSeparator()).append("Type instruction: ");
+    expected.append("Welcome to the spreadsheet program!").append(System.lineSeparator());
+    expected.append("Supported user instructions are: ").append(System.lineSeparator());
+    expected.append("assign-value row-num col-num value (set a cell to a value)")
+            .append(System.lineSeparator());
+    expected.append("print-value row-num col-num (print the value at a given cell)")
+            .append(System.lineSeparator());
+    expected.append("bulk-assign-value from-row-num from-col-num to-row-num to-col-num value")
+            .append(" (set a range of cells to a value)").append(System.lineSeparator());
+    expected.append("range-assign from-row-num from-col-num to-row-num to-col-num start-value")
+            .append(" increment (set a row or column of cells to a range of values starting at the")
+            .append(" given value and advancing by the increment)").append(System.lineSeparator());
+    expected.append("average from-row-num from-col-num to-row-num to-col-num dest-row-num ")
+            .append("dest-col-num (compute the average of a range of cells and put it at the given")
+            .append(" location)").append(System.lineSeparator());
+    expected.append("menu (Print supported instruction list)").append(System.lineSeparator());
+    expected.append("q or quit (quit the program) ").append(System.lineSeparator());
+    expected.append("Type instruction: ");
     input.append("bulk-assign-value " + 'A' + " " + '1' + " " + 'B' + " " + '3' + " 100")
             .append(System.lineSeparator());
     for (int row = 0; row < 2; row++) {

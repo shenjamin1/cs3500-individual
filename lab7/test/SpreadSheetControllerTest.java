@@ -43,13 +43,12 @@ public class SpreadSheetControllerTest {
         }
       }
     }
-    expected.append("Thank you for using this program! ");
+    expected.append("Thank you for using this program!");
     Readable input = new StringReader(sb.toString());
     Appendable output = new StringBuilder();
     SpreadSheet model = new SparseSpreadSheet();
     SpreadSheetController c = new SpreadSheetController(model, input, output);
     c.control();
     assertEquals(expected.toString(), output.toString());
-
   }
 }
