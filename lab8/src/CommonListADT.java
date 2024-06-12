@@ -11,9 +11,9 @@ public interface CommonListADT<T> {
    * A general purpose map higher order function on this list, that returns
    * the corresponding list of type R.
    *
-   * @param converter the function that converts T into R
-   * @param <R>       the type of data in the resulting list
-   * @return the resulting list that is identical in structure to this list,
+   * @param converter    the function that converts T into R
+   * @param <R>    the type of data in the resulting list
+   * @return    the resulting list that is identical in structure to this list,
    * but has data of type R
    */
   <R> CommonListADT<R> map(Function<T, R> converter);

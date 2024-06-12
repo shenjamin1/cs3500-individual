@@ -36,13 +36,13 @@ public class MutableListADTTest {
       assertEquals(immutableStringListADT.get(i), mutableStringListADT.getImmutableList().get(i));
     }
   }
-  
+
   @Test
   public void testMap() {
-    Function<Integer, Integer> square = x -> x^2;
+    Function<Integer, Integer> square = x -> x ^ 2;
     MutableListADTImpl<Integer> squareMapped = mutableIntListADT.map(square);
     for (int i = 0; i < mutableIntListADT.getSize(); i++) {
-      Integer squareResult = mutableIntListADT.get(i)^2;
+      Integer squareResult = mutableIntListADT.get(i) ^ 2;
       assertEquals(squareMapped.get(i), squareResult);
     }
     assertEquals((Integer) 1, mutableIntListADT.get(0));

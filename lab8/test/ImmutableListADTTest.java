@@ -44,8 +44,8 @@ public class ImmutableListADTTest {
     stringListADT.addBack("World");
     stringListADT.addBack("!");
     MutableListADT<String> mutableStringListADT = new MutableListADTImpl<>(stringListADT);
-    assertEquals(mutableStringListADT.toString()
-            , immutableStringListADT.getMutableList().toString());
+    assertEquals(mutableStringListADT.toString(),
+            immutableStringListADT.getMutableList().toString());
     for (int i = 0; i < mutableStringListADT.getSize(); i++) {
       assertEquals(mutableStringListADT.get(i), immutableStringListADT.getMutableList().get(i));
     }
@@ -53,11 +53,11 @@ public class ImmutableListADTTest {
 
   @Test
   public void testMap() {
-    Function<Integer, Integer> square = x -> x^2;
+    Function<Integer, Integer> square = x -> x ^ 2;
     ImmutableListADTImpl<Integer> squareMapped
             = (ImmutableListADTImpl<Integer>) immutableIntListADT.map(square);
     for (int i = 0; i < immutableIntListADT.getSize(); i++) {
-      Integer squareResult = immutableIntListADT.get(i)^2;
+      Integer squareResult = immutableIntListADT.get(i) ^ 2;
       assertEquals(squareMapped.get(i), squareResult);
     }
     assertEquals((Integer) 1, immutableIntListADT.get(0));
